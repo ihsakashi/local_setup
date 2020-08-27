@@ -15,6 +15,12 @@ safer-git() {
     fi
 }
 
+pushd vendor/pa
+safer-git remote add neos ${REMOTE_URL}/android_vendor_pa.git
+safer-git fetch neos quartz
+safer-git cherry-pick dbaf7bc2d9 # include neos vendor
+popd
+
 pushd frameworks/base
 safer-git remote add neos ${REMOTE_URL}/android_frameworks_base.git
 safer-git fetch neos quartz
