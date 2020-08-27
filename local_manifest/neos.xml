@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <project name="ihsakashi/android_vendor_neos" path="vendor/neos" remote="github" revision="neos" />
+    <project name="ihsakashi/android_vendor_neos" path="vendor/neos" remote="github" revision="neos"/>
+    <project name="ihsakashi/android_system_libww" path="system/libww" remote="github" revision="master"/>
 </manifest>
