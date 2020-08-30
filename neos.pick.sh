@@ -18,7 +18,7 @@ safer-git() {
 pushd vendor/pa
 safer-git remote add neos ${REMOTE_URL}/android_vendor_pa.git
 safer-git fetch neos quartz
-safer-git cherry-pick dbaf7bc2d9 # include neos vendor
+safer-git cherry-pick 84699fed03 # Include neos vendor
 popd
 
 pushd frameworks/base
@@ -31,6 +31,6 @@ popd
 pushd system/core
 safer-git remote add neos ${REMOTE_URL}/android_system_core.git
 safer-git fetch neos quartz
-safer-git cherry-pick 40cac9f8b7 # Boot on charger state too
+safer-git cherry-pick 5be5da43a9 # Boot on charger state too
 safer-git cherry-pick 40cac9f8b7 # add comma permissions to fs_config
 popd
