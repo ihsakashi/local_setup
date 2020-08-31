@@ -2,3 +2,4 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 BUILD_ROOT=$DIR/aospa
 LOCAL_MANIFEST=$DIR/local_manifest
 REMOTE_URL=http://github.com/ihsakashi
+CCACHE_SIZE=30G

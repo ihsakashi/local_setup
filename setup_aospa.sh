@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./env
+source ~/.profile
 
 mkdir -p ${BUILD_ROOT}
 
@@ -30,14 +31,23 @@ ln -s ${LOCAL_MANIFEST}/neos.xml .
 
 repo sync -j8
 
-echo "> Cherry-picking changes"
-# NEOS
-$DIR/neos.pick.sh
+echo "> Setting up CCACHE"
+echo "> CCACHE SIZE: ${CCACHE_SIZE}"
+echo 'export USE_CCACHE=1' >> ~/.bashrc
+echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
+ccache -M ${{CCACHE_SIZE}}
 
-echo "> Linking AOSPA build script"
-cd ${BUILD_ROOT}
-ln -s $DIR/my_build.sh ./my-build
+source ~/.bashrc
+
+#echo "> Cherry-picking changes"
+# NEOS
+#$DIR/neos.pick.sh
+
+#echo "> Linking AOSPA build script"
+#cd ${BUILD_ROOT}
+#ln -s $DIR/my_build.sh ./my-build
 
 echo "> Done!"
 echo "> Run ${BUILD_ROOT}/my-build to build AOSPA"
+cd $DIR
 touch aosp_installed
