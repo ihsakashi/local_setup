@@ -23,13 +23,13 @@ cd ${BUILD_ROOT}
 repo init -u https://github.com/AOSPA/manifest -b quartz
 repo sync -j8 -c --no-clone-bundle --current-branch --no-tags
 
-echo "> Linking local manifest and resyncing"
-mkdir -p ${BUILD_ROOT}/.repo/local_manifests
-cd ${BUILD_ROOT}/.repo/local_manifests
+#echo "> Linking local manifest and resyncing"
+#mkdir -p ${BUILD_ROOT}/.repo/local_manifests
+#cd ${BUILD_ROOT}/.repo/local_manifests
 
-ln -s ${LOCAL_MANIFEST}/neos.xml .
+#ln -s ${LOCAL_MANIFEST}/neos.xml .
 
-repo sync -j8 -c --no-clone-bundle --current-branch --no-tags
+#repo sync -j8 -c --no-clone-bundle --current-branch --no-tags
 
 echo "> Setting up CCACHE"
 echo "> CCACHE SIZE: ${CCACHE_SIZE}"
