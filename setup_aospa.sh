@@ -20,7 +20,7 @@ echo " "
 echo "> Init and sync repo"
 echo "> This will take some time.."
 cd ${BUILD_ROOT}
-repo init -u https://github.com/AOSPA/manifest -b quartz
+repo init -u https://github.com/ihsakashi/manifest -b quartz
 repo sync -j8 -c --no-clone-bundle --current-branch --no-tags
 
 #echo "> Linking local manifest and resyncing"
@@ -35,7 +35,7 @@ echo "> Setting up CCACHE"
 echo "> CCACHE SIZE: ${CCACHE_SIZE}"
 echo 'export USE_CCACHE=1' >> ~/.bashrc
 echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
-ccache -M ${{CCACHE_SIZE}}
+ccache -M ${CCACHE_SIZE}
 
 source ~/.bashrc
 
